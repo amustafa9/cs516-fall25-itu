@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CS516 - Information Retrieval and Text Mining</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h3 {
+      color: #003366;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 25px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .course-info, .instructor-info, .grading, .schedule {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #003366;
+      color: #fff;
+      text-align: left;
+      padding: 8px;
+    }
+    td {
+      padding: 8px;
+      vertical-align: top;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .note {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="instructor-info">
+    <h2>Biography</h2>
+    <p>
+      Dr. Ahmad Mustafa is an Assistant Professor at the Department of Computer Science, Information Technology University (ITU). He obtained his PhD in Electrical and Computer Engineering at the Georgia Institute of Technology, USA. 
+Prior to joining ITU, he worked as a  Research Scientist at Occidental Petroleum (Houston, TX), leading the development of large-scale computational models to streamline subsurface applications. His research interests lie in machine learning, weakly supervised learning, computational image interpretation, inverse problems, and domain adaptation. He was awarded the Roger P. Webb ECE GRA Excellence Award in recognition of his research contributions by Georgia Tech.
+For his teaching services, he was awarded the Outstanding Online Head TA Award, the ECE GTA Excellence Award, and the ECE CREATION Award. His work has been featured in top-tier peer-reviewed academic journals, conference proceedings, and technical presentations, and is frequently cited by both academic and industry peers. 
+    </p>
+  </div>
+
+<div class="course-info">
+    <h2>Course Description</h2>
+    <p>
+      This course provides a comprehensive understanding of how to search, organize, 
+      and extract knowledge from unstructured text. Topics include classical IR models, 
+      evaluation metrics, text mining techniques (classification, clustering, topic modeling), 
+      and neural approaches with transformers. Students will complete hands-on assignments 
+      and a semester project to develop scalable IR and text analysis systems.
+    </p>
+  </div>
+
+  <div class="course-info">
+    <h2>Prerequisites</h2>
+    <p>
+      The course assumes familiarity with fundamental concepts in linear algebra, such as vector spaces, dot products, and matrix representations, since these underpin vector space models and similarity computations central to information retrieval. Students should also have a working knowledge of probability and statistics, including concepts like conditional probability, Bayes’ rule, and distributions, which are essential for understanding probabilistic retrieval models and evaluation metrics. In addition, prior exposure to basic machine learning ideas—such as classification, clustering, and feature representation—will help in grasping modern IR methods that integrate learning-based approaches. Proficiency in programming, particularly in Python, is also required, as students will implement retrieval algorithms, process text data, and experiment with libraries relevant to IR.
+    </p>
+  </div>
+
+<div style="font-family:Arial, sans-serif; max-width:650px; margin:auto; line-height:1.6;">
+  <h2 style="color:#2c3e50; text-align:center;">Class Schedule</h2>
+  
+  <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+    <!-- Monday Class -->
+    <div style="background:#f1f7ff; padding:14px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08); display:flex; align-items:flex-start; gap:12px;">
+      <div style="font-size:22px; color:#164ea6;">📅</div>
+      <div>
+        <p style="margin:0; font-weight:bold; color:#164ea6;">Mondays</p>
+        <p style="margin:0;">5:30 pm – 7:00 pm</p>
+        <p style="margin:0; font-size:14px; color:#444;">📍 Room LT-1, 6th Floor, Arfa Karim Software Technology Park, Lahore</p>
+      </div>
+    </div>
+
+    <!-- Wednesday Class -->
+    <div style="background:#fff8f0; padding:14px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08); display:flex; align-items:flex-start; gap:12px;">
+      <div style="font-size:22px; color:#e07b00;">📅</div>
+      <div>
+        <p style="margin:0; font-weight:bold; color:#e07b00;">Wednesdays</p>
+        <p style="margin:0;">7:15 pm – 8:45 pm</p>
+        <p style="margin:0; font-size:14px; color:#444;">📍 Room LT-1, 6th Floor, Arfa Karim Software Technology Park, Lahore</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:18px; text-align:center; font-size:14px; color:#555;">
+    Classes meet <strong>twice a week</strong>. Please be punctual to maximize learning and participation.
+  </p>
+</div>
+
+
+<div class="instructor-info" style="font-family:Arial, sans-serif; line-height:1.6;">
+  <h2>Office Hours and TAs</h2>
+  
+  <h3>Instructor</h3>
+  <p><strong>Name:</strong> Dr. Ahmad Mustafa</p>
+  <p><strong>Office:</strong> 6th Floor (My Office) </p>
+  <p><strong>Office Hours:</strong> Thursdays, 11 am – 12 pm</p>
+<p><strong>Online Link:</strong> <a href="https://meet.google.com/eqe-dzsj-fpi">https://meet.google.com/eqe-dzsj-fpi</a></p>
+  <p><strong>Email:</strong> <a href="mailto:ahmad.mustafa@itu.edu.pk">ahmad.mustafa@itu.edu.pk</a></p>
+  
+  <h3>Teaching Assistants</h3>
+  <div style="margin-left:1em;">
+    <p><strong>Fiza Areej</strong><br>
+       <strong>Email:</strong> <a href="mailto:msds21022@itu.edu.pk">msds21022@itu.edu.pk</a><br>
+       <strong>Office Hours:</strong> Wednesdays, 5 – 6 pm<br>
+       <strong>Location (Online Only):</strong> <a href="https://meet.google.com/cpf-sfku-ysy">https://meet.google.com/cpf-sfku-ysy</a></p>
+    </p>
+    
+    <p><strong>Muhammad Talha Jamil</strong><br>
+       <strong>Email:</strong> <a href="mailto:bsai23008@itu.edu.pk">bsai23008@itu.edu.pk</a><br>
+       <strong>Office Hours:</strong> Mondays, 4 – 5 pm<br>
+       <strong>Location:</strong> 6th floor ITU Elevator Lobby
+    </p>
+  </div>
+</div>
+
+
+  
+<div style="font-family:Arial, sans-serif; max-width:800px; margin:auto; line-height:1.5;">
+  <h2 style="color:#2c3e50; text-align:center;">Course Platforms: Piazza &amp; Google Classroom</h2>
+
+  <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between; margin-top:12px;">
+    <!-- Piazza Card -->
+    <div style="flex:1 1 320px; background:#f1f7ff; padding:16px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+      <h3 style="margin-top:0; color:#164ea6;">Piazza — Questions &amp; Discussion</h3>
+      <p>
+        We will use <strong>Piazza</strong> as the primary forum for technical questions, discussion, and collaborative answers.
+        Post conceptual and programming questions there first — both instructors and TAs monitor Piazza daily.
+      </p>
+      <ul>
+        <li><strong>Ask &amp; Answer:</strong> Students are encouraged to post answers and share code snippets.</li>
+        <li><strong>Announcements:</strong> Important clarifications and brief updates may be posted as announcements.</li>
+        <li><strong>Searchable Archive:</strong> Past Q&amp;A is indexed — check existing threads before posting.</li>
+        <li><strong>Etiquette:</strong> Keep posts respectful, use descriptive titles, and include code/text with proper formatting.</li>
+      </ul>
+    </div>
+
+    <!-- Google Classroom Card -->
+    <div style="flex:1 1 320px; background:#fff8f0; padding:16px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+      <h3 style="margin-top:0; color:#e07b00;">Google Classroom — Assignments &amp; Grades</h3>
+      <p>
+        <strong>Google Classroom</strong> will manage assignment distribution, submissions, and the gradebook.
+        All formal deliverables must be submitted through Classroom unless stated otherwise.
+      </p>
+      <ul>
+        <li><strong>Assignments:</strong> Posted with clear due dates and submission instructions.</li>
+        <li><strong>Feedback:</strong> Instructor and TA comments will appear with returned work.</li>
+        <li><strong>Gradebook:</strong> Scores and grade breakdown will be visible in Classroom.</li>
+        <li><strong>Calendar:</strong> Synchronized deadlines and event reminders appear in the Classroom calendar.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Expectations -->
+  <div style="margin-top:16px; padding:12px; background:#f7f7f7; border-radius:8px; box-shadow:inset 0 1px 0 rgba(0,0,0,0.02);">
+    <h4 style="margin:0 0 8px 0; color:#2c3e50;">How to use them effectively</h4>
+    <ol style="margin:0 0 0 16px;">
+      <li><strong>First:</strong> Check Piazza for existing answers before posting.</li>
+      <li><strong>Submit:</strong> Turn in all graded work via Google Classroom by the deadline.</li>
+      <li><strong>Grades &amp; Feedback:</strong> Review returned assignments and comments in Classroom.</li>
+      <li><strong>Urgent matters:</strong> Use email for private or grade/record-sensitive issues; use Piazza for questions that benefit the whole class.</li>
+    </ol>
+  </div>
+</div>
+
+  <div class="grading">
+    <h2>Grading Policy</h2>
+    <table>
+      <tr><th>Assessment</th><th>Weight</th></tr>
+      <tr><td>Quizzes (6)</td><td>10%</td></tr>
+      <tr><td>Assignments (4)</td><td>20%</td></tr>
+      <tr><td>Project (1)</td><td>25%</td></tr>
+      <tr><td>Midterm Exam</td><td>15%</td></tr>
+      <tr><td>Final Exam</td><td>30%</td></tr>
+    </table>
+  </div>
+
+ <div class="outline" style="font-family:Arial, sans-serif; max-width:900px; margin:auto; line-height:1.6;">
+  <h2>Course Outline</h2>
+  <table style="width:100%; border-collapse:collapse; margin-top:12px;">
+    <tr style="background:#f4f6f8; text-align:left;">
+      <th style="padding:8px; border-bottom:2px solid #ccc;">Week</th>
+      <th style="padding:8px; border-bottom:2px solid #ccc;">Topics</th>
+      <th style="padding:8px; border-bottom:2px solid #ccc;">Readings</th>
+      <th style="padding:8px; border-bottom:2px solid #ccc;">Notes</th>
+    </tr>
+    <tr>
+      <td style="padding:8px;">1 (18th Aug)</td>
+      <td style="padding:8px;">Introduction, Course Overview, Boolean Retrieval, Inverted Index, Positional Indexing, Phrase Queries</td>
+      <td style="padding:8px;">Manning et al., Ch. 1</td>
+      <td style="padding:8px;"> </td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">2 (25th Aug)</td>
+      <td style="padding:8px;">Document Preprocessing: Tokenization, Normalization, Stop-word Removal, Stemming, Lemmatization</td>
+      <td style="padding:8px;">Manning et al., Ch. 2</td>
+     <td style="padding:8px;"> </td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">3 (1st Sep)</td>
+      <td style="padding:8px;">Dictionary Search Structures, Tolerant Retrieval, Wildcard Queries, Spelling Correction, Phonetic Correction</td>
+      <td style="padding:8px;">Manning et al., Ch. 3</td>
+      <td style="padding:8px;"> Quiz 1 </td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">4 (8th Sep)</td>
+      <td style="padding:8px;">Index Compression, Heap’s Law, Zipf’s Law, Dictionary Compression, Variable Byte Codes, γ codes</td>
+      <td style="padding:8px;">Manning et al., Ch. 5</td>
+      <td style="padding:8px;"> Project Proposals are due </td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">5 (15th Sep)</td>
+      <td style="padding:8px;">Scoring, Term Frequency and Weighting, Vector Space Model, TF-IDF</td>
+      <td style="padding:8px;">Manning et al., Ch. 6</td>
+      <td style="padding:8px;"> Quiz 2 </td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">6 (22 Sep)</td>
+      <td style="padding:8px;">Efficient Scoring, Inexact Top-K Retrieval, Index Elimination, Champion Scoring, Cluster Pruning</td>
+      <td style="padding:8px;">Manning et al., Ch. 7</td>
+      <td style="padding:8px;"> Homework 1 is posted </td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">7 (29th Sep)</td>
+      <td style="padding:8px;">IR Evaluation: Ranked vs. Unranked Retrieval, Relevance Feedback, Query Expansion</td>
+      <td style="padding:8px;">Manning et al., Ch. 8–9</td>
+      <td style="padding:8px;"> Homework 1 is due </td>
+    </tr>
+  <tr>
+      <td style="padding:8px;">8 (6th Oct)</td>
+      <td style="padding:8px;">Probabilistic IR, Binary Independence Model, Query Likelihood Model</td>
+      <td style="padding:8px;">Manning et al., Ch. 11–12</td>
+     <td style="padding:8px;"></td>
+    </tr>
+ <tr>
+      <td style="padding:8px;">9 (13th Oct)</td>
+      <td style="padding:8px;">Midterm Exam Week (No Classes)</td>
+      <td style="padding:8px;">Manning et al., Ch. 11–12</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">10 (20th Oct)</td>
+      <td style="padding:8px;">Probabilistic IR, Binary Independence Model, Query Likelihood Model</td>
+      <td style="padding:8px;">Manning et al., Ch. 11–12</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">11 (27th Oct)</td>
+      <td style="padding:8px;">Text Classification: Naive Bayes, Bernoulli Model, Mutual Information, Feature Selection</td>
+      <td style="padding:8px;">Manning et al., Ch. 13</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">12 (3rd Nov)</td>
+      <td style="padding:8px;">Document Representation, k-NN, Linear vs. Non-Linear Classifiers, Multiclass SVMs, Learning to Rank</td>
+      <td style="padding:8px;">Manning et al., Ch. 14–15</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">13 (10th Nov)</td>
+      <td style="padding:8px;">Clustering: Flat and Hierarchical, K-Means, Agglomerative Clustering, Evaluation</td>
+      <td style="padding:8px;">Manning et al., Ch. 16–17</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">14 (17th Nov)</td>
+      <td style="padding:8px;">Matrix Decomposition: SVD, Low-Rank Approximation, Term-Document Matrices</td>
+      <td style="padding:8px;">Manning et al., Ch. 18</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">15 (24th Nov)</td>
+      <td style="padding:8px;">Word Embeddings, Transformers, Dense Retrieval (e.g., DPR, ColBERT), Summarization</td>
+      <td style="padding:8px;">Selected Research Papers</td>
+     <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">16 (1st Dec)</td>
+      <td style="padding:8px;">Project Presentations, Review Sessions</td>
+      <td style="padding:8px;">N/A</td>
+     <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">17 (8th Dec)</td>
+      <td style="padding:8px;">Project Presentations, Review Sessions</td>
+      <td style="padding:8px;">N/A</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">18 (15th Dec)</td>
+      <td style="padding:8px;">Final Exam Week</td>
+      <td style="padding:8px;">N/A</td>
+      <td style="padding:8px;"></td>
+    </tr>
+  </table>
+
+  <p style="margin-top:12px; font-size:14px; font-style:italic; color:#555;">
+    Note: This outline is <strong>tentative</strong> and subject to change at the instructor’s discretion.
+  </p>
+</div>
+
+
+  <div class="course-info">
+    <h2>Textbooks</h2>
+    <ul>
+      <li>Manning, Raghavan, Schütze. <em>Introduction to Information Retrieval</em>. Cambridge University Press, 2008. (<a href="https://nlp.stanford.edu/IR-book/">Available online</a>)</li>
+      <li>Jurafsky and Martin. <em>Speech and Language Processing</em>, 3rd Ed. draft. (<a href="https://web.stanford.edu/~jurafsky/slp3/">Free online</a>)</li>
+    </ul>
+  </div>
+
+  <div style="font-family:Arial, sans-serif; max-width:800px; margin:auto; line-height:1.6;">
+  <h2 style="color:#2c3e50; text-align:center;">Course Policies</h2>
+
+  <!-- Late Submission Policy -->
+  <details style="margin-bottom:12px; background:#f8f9fa; padding:12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+    <summary style="font-weight:bold; color:#b22222; cursor:pointer;">Late Submission Policy</summary>
+    <p style="margin-top:8px;">
+      Each student is allowed <strong>one opportunity</strong> during the semester to submit a deliverable 
+      late. A <strong>20% penalty</strong> will be applied to that submission. After this one-time 
+      allowance, <strong>no further late submissions will be accepted</strong>.
+    </p>
+    <p>
+      Late work will <strong>not</strong> be accepted by email. Instead, the student must email the 
+      instructor, who will temporarily reopen the submission portal in Google Classroom to allow 
+      the late submission. Failure to follow this process will result in the submission not being graded.
+    </p>
+  </details>
+
+  <!-- Attendance Policy -->
+  <details style="margin-bottom:12px; background:#f8f9fa; padding:12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+    <summary style="font-weight:bold; color:#2e7d32; cursor:pointer;">Attendance Policy</summary>
+    <p style="margin-top:8px;">
+      Attendance will be recorded in <strong>every lecture</strong>. Students who miss more than 
+      <strong>4 classes</strong> will incur a <strong>5% deduction</strong> from their overall course grade.  
+    </p>
+    <p>
+      Requests for leave of absence will not be granted for isolated or short-term emergencies. 
+      Leave will only be approved in cases where a student must be away for an <strong>extended period</strong> 
+      due to a genuine and unavoidable reason, subject to instructor approval and appropriate documentation.  
+    </p>
+  </details>
+
+  <!-- Academic Integrity -->
+  <details style="margin-bottom:12px; background:#f8f9fa; padding:12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+    <summary style="font-weight:bold; color:#6a1b9a; cursor:pointer;">Academic Integrity</summary>
+    <p style="margin-top:8px;">
+      All submitted work must represent your own effort unless collaboration is explicitly permitted. 
+      Plagiarism, unauthorized collaboration, or use of AI/online solutions without attribution is a 
+      violation of university policy and will result in disciplinary action, including a possible 
+      failing grade for the course.
+    </p>
+  </details>
+
+  <!-- Collaboration Policy -->
+  <details style="margin-bottom:12px; background:#f8f9fa; padding:12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+    <summary style="font-weight:bold; color:#1565c0; cursor:pointer;">Collaboration Policy</summary>
+    <p style="margin-top:8px;">
+      Students are encouraged to discuss high-level problem-solving strategies with classmates. 
+      However, <strong>all code, write-ups, and reports must be written individually</strong>. 
+      Copying or sharing solutions is not permitted. When collaboration is allowed, it will be 
+      explicitly stated in the assignment instructions.
+    </p>
+  </details>
+
+  <!-- Communication Policy -->
+  <details style="margin-bottom:12px; background:#f8f9fa; padding:12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+    <summary style="font-weight:bold; color:#ff6f00; cursor:pointer;">Communication Policy</summary>
+    <p style="margin-top:8px;">
+      Piazza will be the primary platform for Q&amp;A. Students should check regularly for 
+      announcements and clarifications. For personal matters (e.g., grades, accommodations), 
+      contact the instructor via email. TAs should be contacted during office hours for grading 
+      and assignment-related questions.
+    </p>
+  </details>
+
+  <!-- Disabilities & Accessibility Policy -->
+  <details style="margin-bottom:12px; background:#f8f9fa; padding:12px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+    <summary style="font-weight:bold; color:#00838f; cursor:pointer;">Disabilities & Accessibility Policy</summary>
+    <p style="margin-top:8px;">
+      Students with documented disabilities or special learning needs are encouraged to inform 
+      the instructor as early as possible in the semester so that appropriate accommodations 
+      can be arranged in coordination with the university’s disability services office.  
+    </p>
+    <p>
+      All students are expected to meet the same learning objectives; however, reasonable 
+      adjustments will be made to ensure an <strong>inclusive and accessible learning environment</strong>. 
+      Confidentiality will be respected at all times.
+    </p>
+  </details>
+</div>
+
+
+</body>
+</html>
+
+
+
